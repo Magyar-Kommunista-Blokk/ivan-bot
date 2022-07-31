@@ -17,7 +17,7 @@ body:
       placeholder: "Példa: A munka parancs nem működik"
     validations:
       required: true  
-  - type: input
+  - type: textarea
     id: desc
     attributes:
       label: Hiba hosszú leírása
