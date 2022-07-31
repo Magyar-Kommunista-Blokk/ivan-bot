@@ -1,0 +1,49 @@
+name: Hibajelentés
+description: Jelents egy hibát!
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A hibajelentés megnyitása előtt keresd meg, hogy létezik-e az adott probléma. 
+        
+        ---
+        
+        Köszönjük, hogy időt szánsz a hibajelentés benyújtására. A hiba lehető leggyorsabb megoldásához szükségünk van néhány információra.
+  - type: input
+    id: title
+    attributes:
+      label: Hiba rövid leírása
+      description: "Írd le röviden, 1 mondatban hogy mi is történt!"
+      placeholder: "Példa: A munka parancs nem működik"
+    validations:
+      required: true  
+  - type: input
+    id: desc
+    attributes:
+      label: Hiba hosszú leírása
+      description: "Itt részletezheted, hogy milyen hibát találtál!"
+      placeholder: "Példa: Amikor a gyártelep csatornában megpróbáltam dolgozni, a bot nem válaszolt. Ezek után törlődött a Rubel egyenlegem."
+    validations:
+      required: true
+  - type: dropdown
+    id: ok
+    attributes:
+      label: Mivel van a gond?
+      description: Pontosan a bot melyik részénél jött elő a hiba?
+      options:
+        - Adatok (rubelek, vásárolt dolgok és egyéb tárolt adatok)
+        - Használhatóság (lassú válasz, nehéz kezelés)
+        - Működéshiba (valamit rosszul csinál a bot)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reprodukálási Lépések
+      description: Milyen lépéseket kell megtennünk, hogy reprodukáljuk a hibát?
+  - type: textarea
+    id: other
+    attributes:
+      label: Egyéb
+      description: Van egyéb információd a hibával kapcsolatban?
+      render: shell
